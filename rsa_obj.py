@@ -1,8 +1,6 @@
 from Crypto.Util import number
 from sympy import mod_inverse
 from math import gcd
-#from secrets import randbelow
-#import secrets
 from random import randint
 import os
 from funcoes_auxiliares import string_to_ascii, fatorar_numero, ascii_to_string
@@ -82,6 +80,6 @@ class RSA:
 
 
 rsa = RSA()
-lista_encriptada = rsa.encriptar("88")
+lista_encriptada = rsa.encriptar("Agora, passaremos à questão da complexidade computacional exigida para usar o RSA. Existem, na realidade, dois pontos a considerar: encriptação/decriptação e geração de chave. Vamos examinar primeiro o processo de encriptação e decriptação, para depois considerarmos a geração de chave.")
 print(lista_encriptada)
 print(rsa.decriptar(lista_encriptada))
