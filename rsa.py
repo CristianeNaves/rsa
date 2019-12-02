@@ -1,4 +1,7 @@
 from Crypto.Util import number
+from sympy import mod_inverse
+from math import gcd
+from secrets import randbelow
 import os
 from funcoes_auxiliares import string_to_ascii, fatorar_numero, ascii_to_string
 
@@ -52,8 +55,11 @@ def phi_n(p, q):
 
 # mdc(e, phi(n)) = 1   1 < e < phi(n)
 def gerar_e():
-    pass
+    self.e = randbelow(self.phi_n)
+    
+    if self.e < 2 or gcd(self.e, self.phi_n) != 1:
+        self.gerar_e()
 
 # e * d = 1 mod(phi(n))
 def gerar_d():
-    pass
+    return mod_inverse(self.e, self.phi_n)
